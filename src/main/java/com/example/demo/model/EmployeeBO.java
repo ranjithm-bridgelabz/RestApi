@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
 public class EmployeeBO {
-
+	/* Request class */
 	private int userid;
 	private String name;
 	private String email;

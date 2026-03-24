@@ -15,6 +15,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 @Repository
 public class EmployeeRepositoryimpl implements EmployeeRepository {
+	/* This is my repository layer*/
 	@Autowired
 	public EntityManager entitymanager;
 
