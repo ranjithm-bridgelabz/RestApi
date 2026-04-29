@@ -11,4 +11,13 @@ public interface EmployeeRepository {
 
 	List<Employee> findAll();
 
+	Employee findById(Long userid);
+
+	Employee update(Employee existing);
+
+	void delete(Employee existing);
+
+	Employee findById(int id);
+
+
 }

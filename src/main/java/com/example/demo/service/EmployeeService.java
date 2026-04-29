@@ -11,4 +11,8 @@ public interface EmployeeService {
 
 	List<EmployeeBO> getAll();
 
+	EmployeeBO update(Long userid, EmployeeBO bo);
+
+	void delete(Long userid);
+
 }

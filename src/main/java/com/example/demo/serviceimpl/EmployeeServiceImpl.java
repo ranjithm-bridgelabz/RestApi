@@ -48,4 +48,40 @@ public class EmployeeServiceImpl implements EmployeeService {
 	    return boList;
 	}
 
+	@Override
+	public EmployeeBO update(Long userid, EmployeeBO bo) {
+
+	    // existing record eduthukrom
+	    Employee existing = dao.findById(userid);
+	       
+
+	    // fields update pannrom
+	    existing.setName(bo.getName());
+	    existing.setEmail(bo.getEmail());
+
+	    // save pannrom
+	    Employee updated = dao.update(existing);
+
+	    // response return pannrom
+	    EmployeeBO response = new EmployeeBO();
+	    BeanUtils.copyProperties(updated, response);
+
+	    return response;
+	}
+
+	@Override
+	public void delete(Long userid) {
+
+	    // first DB la iruka record edukkrom
+	    Employee existing = dao.findById(userid);
+
+	    // check pannrom (important)
+	    if (existing == null) {
+	        throw new RuntimeException("Employee not found");
+	    }
+
+	    // delete pannrom
+	    dao.delete(existing);
+	}
+
 }
